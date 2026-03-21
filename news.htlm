@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | Holaidexpress Global Biz Nig. Ltd</title>
+    <meta name="description" content="Latest agricultural news from Nigeria: Cocoa, cashew, sesame, hibiscus updates and market information.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Top Bar */
+        .top-bar { background-color: #0d3d16; color: white; padding: 10px 0; font-size: 0.9rem; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar .contact-info span { margin-right: 20px; }
+        .top-bar .social-links a { color: white; margin-left: 15px; font-size: 1.1rem; }
+        
+        /* Navigation */
+        .navbar { background-color: #1a5f2a; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo h1 { color: white; font-size: 1.8rem; margin-bottom: 0; }
+        .logo span { color: #FFA500; font-size: 0.85rem; display: block; margin-top: -5px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { color: white; font-weight: 600; text-decoration: none; padding: 5px 0; }
+        .nav-links a:hover, .nav-links a.active { border-bottom: 2px solid #FFA500; }
+        
+        /* Page Header */
+        .page-header { background: linear-gradient(rgba(26,95,42,0.9), rgba(26,95,42,0.9)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920'); background-size: cover; color: white; padding: 80px 0; text-align: center; }
+        .page-header h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        
+        /* News Section */
+        .news-section { padding: 60px 0; background-color: #f8f9fa; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: #1a5f2a; }
+        
+        /* Breaking News Alert */
+        .breaking-news { background: linear-gradient(135deg, #c62828 0%, #e53935 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 5px 20px rgba(198,40,40,0.3); }
+        .breaking-label { display: inline-block; background: white; color: #c62828; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 15px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .breaking-news h2 { font-size: 1.5rem; margin-bottom: 15px; }
+        .breaking-news .date { opacity: 0.9; font-size: 0.9rem; margin-bottom: 15px; }
+        .breaking-news .author { font-style: italic; opacity: 0.9; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); }
+        
+        /* News Cards */
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .news-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .news-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+        .news-image { height: 200px; background-size: cover; background-position: center; }
+        .news-content { padding: 25px; }
+        .news-date { color: #666; font-size: 0.9rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .news-category { display: inline-block; background: #1a5f2a; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; margin-bottom: 15px; }
+        .news-card h3 { color: #1a5f2a; margin-bottom: 15px; font-size: 1.3rem; }
+        .news-card p { color: #666; line-height: 1.7; margin-bottom: 15px; }
+        .read-more { color: #1a5f2a; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+        
+        /* Market Updates Sidebar */
+        .market-updates { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-top: 40px; }
+        .market-updates h3 { color: #1a5f2a; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .price-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .price-item:last-child { border-bottom: none; }
+        .product-name { font-weight: 600; color: #333; }
+        .price-trend { display: flex; align-items: center; gap: 5px; }
+        .trend-up { color: #2e7d32; }
+        .trend-down { color: #c62828; }
+        
+        /* Footer */
+        footer { background-color: #2c3e50; color: white; padding: 50px 0 20px; margin-top: 60px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 40px; }
+        .footer-col h3 { color: #FFA500; margin-bottom: 20px; }
+        .footer-col h4 { color: #FFA500; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: #bdc3c7; text-decoration: none; }
+        .footer-col a:hover { color: #FFA500; }
+        .footer-bottom { border-top: 1px solid #34495e; padding-top: 20px; text-align: center; color: #95a5a6; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span>📞 +234 803 XXX XXXX</span>
+                <span>✉️ info@holaidexpress.com</span>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/company/holaidexpress" target="_blank">LinkedIn</a>
+                <a href="https://wa.me/234803XXXXXX" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>HOLAIDEXPRESS</h1>
+                <span>Global Biz Nig. Ltd</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>News & Market Updates</h1>
+            <p>Latest agricultural news from Nigeria and global commodity markets</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+
+            <!-- BREAKING NEWS - CRIN ABDUCTION UPDATE -->
+            <div class="breaking-news">
+                <span class="breaking-label">🚨 Breaking News</span>
+                <div class="date">📅 March 21, 2026 | 6:15 AM WAT</div>
+                <h2>CRIN Abducted Farmers Released After Ransom Payment</h2>
+                <p>This is to inform the entire public that the three visitors (farmers) that were abducted at <strong>Cocoa Research Institute of Nigeria (CRIN)</strong> on Wednesday 18th of March 2026 have been released at the early hours of today <strong>21st March, 2026</strong> after ransom was paid.</p>
+                
+                <p>The Management of Cocoa Research Institute of Nigeria hereby appeals to the <strong>Nigeria government</strong> to ensure adequate protection of lives and properties at CRIN so as to prevent such future occurrences.</p>
+                
+                <p style="font-size: 1.1rem; margin-top: 20px;"><em>"Where there is peace and protection certainly there will be progress."</em></p>
+                
+                <div class="author">
+                    <strong>DR A.R. Adedeji</strong><br>
+                    Ag. Executive Director<br>
+                    Cocoa Research Institute of Nigeria (CRIN)
+                </div>
+            </div>
+
+            <!-- Other News Cards -->
+            <div class="news-grid">
+                
+                <!-- News Item 1 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1548907040-4baa42d10919?w=400');"></div>
+                    <div class="news-content">
+                        <span class="news-category">Cocoa</span>
+                        <div class="news-date">📅 March 15, 2026</div>
+                        <h3>Nigeria Cocoa Production Increases 15% in 2025/2026 Season</h3>
+                        <p>The National Cocoa Management Committee reports a significant increase in cocoa output across Ondo, Ogun, and Cross River states due to improved farming techniques and favorable weather conditions.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1616680213661-3c641750899c?w=400');"></div>
+                    <div class="news-content">
+                        <span class="news-category">Cashew</span>
+                        <div class="news-date">📅 March 10, 2026</div>
+                        <h3>European Union Tightens Aflatoxin Regulations for Cashew Imports</h3>
+                        <p>New EU regulations effective April 2026 will reduce maximum aflatoxin limits from 5ppb to 4ppb for all cashew kernel imports. Nigerian exporters advised to enhance quality control measures.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400');"></div>
+                    <div class="news-content">
+                        <span class="news-category">Hibiscus</span>
+                        <div class="news-date">📅 March 5, 2026</div>
+                        <h3>German Demand for Nigerian Hibiscus Surges 40%</h3>
+                        <p>European herbal tea manufacturers report increased orders for Nigerian dried hibiscus flowers (Zobo) due to rising consumer preference for natural, caffeine-free beverages.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1607006412367-5c3e8bcca34e?w=400');"></div>
+                    <div class="news-content">
+                        <span class="news-category">Shea Butter</span>
+                        <div class="news-date">📅 February 28, 2026</div>
+                        <h3>Shea Cooperatives in Niger State Receive EU Organic Certification</h3>
+                        <p>Three women's cooperatives in Niger State have achieved EU Organic certification, opening premium market access for Nigerian shea butter in France and Germany.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 5 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400');"></div>
+                    <div class="news-content">
+                        <span class="news-category">Sesame</span>
+                        <div class="news-date">📅 February 20, 2026</div>
+                        <h3>Nasarawa State Sesame Harvest Exceeds Projections</h3>
+                        <p>The 2025/2026 sesame harvest in Nasarawa State has exceeded agricultural department projections by 25%, creating surplus availability for export markets.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 6 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=400');"></div>
+                    <div class="news-content">
+                        <span class="news-category">General</span>
+                        <div class="news-date">📅 February 15, 2026</div>
+                        <h3>Apapa Port Congestion Eases with New Digital Clearing System</h3>
+                        <p>The new electronic call-up system at Lagos Apapa Port has reduced cargo waiting times by 60%, improving export logistics for agricultural commodities.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Market Price Updates -->
+            <div class="market-updates">
+                <h3>📊 Commodity Price Trends (FOB Lagos)</h3>
+                <div class="price-item">
+                    <span class="product-name">Cocoa Beans (Grade 1)</span>
+                    <span class="price-trend trend-up">$2,850/MT ↑ 3.2%</span>
+                </div>
+                <div class="price-item">
+                    <span class="product-name">Cashew Kernels (W320)</span>
+                    <span class="price-trend trend-up">$4,200/MT ↑ 1.8%</span>
+                </div>
+                <div class="price-item">
+                    <span class="product-name">Hibiscus (Dried)</span>
+                    <span class="price-trend trend-up">$1,950/MT ↑ 5.4%</span>
+                </div>
+                <div class="price-item">
+                    <span class="product-name">Sesame Seeds (White)</span>
+                    <span class="price-trend trend-down">$1,450/MT ↓ 2.1%</span>
+                </div>
+                <div class="price-item">
+                    <span class="product-name">Shea Butter (Raw)</span>
+                    <span class="price-trend trend-up">$1,800/MT ↑ 4.0%</span>
+                </div>
+                <div class="price-item">
+                    <span class="product-name">Ginger (Dried Split)</span>
+                    <span class="price-trend trend-down">$2,100/MT ↓ 1.5%</span>
+                </div>
+                <p style="margin-top: 20px; color: #666; font-size: 0.9rem;"><em>*Prices indicative as of March 21, 2026. Contact us for firm quotations.</em></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Holaidexpress Global Biz Nig. Ltd</h3>
+                    <p>From Nigerian Farms to European Standards - Quality You Can Trace</p>
+                    <p>Your trusted partner for Nigerian agricultural exports.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📞 +234 803 XXX XXXX<br>
+                    ✉️ info@holaidexpress.com<br>
+                    🔗 linkedin.com/company/holaidexpress</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Holaidexpress Global Biz Nig. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
