@@ -1,26 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Holaidexpress Global Biz Nig. Ltd</title>
-    <meta name="description" content="Learn about Holaidexpress Global Biz Nig. Ltd - Nigerian agro export company connecting Nigerian farms to European markets.">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact Us | Holaidexpress Global Biz Nig. Ltd</title>
+    <meta name="description" content="Contact Holaidexpress Global Biz Nig. Ltd. Offices in Lagos, Ibadan, and France. WhatsApp, phone, email available.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Top Bar */
+        .top-bar { background-color: #0d3d16; color: white; padding: 10px 0; font-size: 0.9rem; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar .contact-info span { margin-right: 20px; }
+        .top-bar .contact-info a { color: white; text-decoration: none; }
+        .top-bar .social-links a { color: white; margin-left: 15px; font-size: 1.1rem; text-decoration: none; }
+        
+        /* Navigation */
+        .navbar { background-color: #1a5f2a; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo h1 { color: white; font-size: 1.8rem; margin-bottom: 0; }
+        .logo span { color: #FFA500; font-size: 0.85rem; display: block; margin-top: -5px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { color: white; font-weight: 600; text-decoration: none; padding: 5px 0; }
+        .nav-links a:hover, .nav-links a.active { border-bottom: 2px solid #FFA500; }
+        
+        /* Page Header */
+        .page-header { background: linear-gradient(rgba(26,95,42,0.9), rgba(26,95,42,0.9)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920'); background-size: cover; color: white; padding: 80px 0; text-align: center; }
+        .page-header h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        
+        /* Contact Section */
+        .contact-section { padding: 60px 0; background-color: #f8f9fa; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: #1a5f2a; }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
+        
+        /* Office Cards */
+        .office-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 25px; border-left: 4px solid #1a5f2a; }
+        .office-card.europe { border-left-color: #FFA500; }
+        .office-card h3 { color: #1a5f2a; margin-bottom: 20px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .office-detail { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .office-detail:last-child { border-bottom: none; margin-bottom: 0; }
+        .office-detail strong { color: #1a5f2a; display: block; margin-bottom: 5px; }
+        .office-detail p { color: #666; margin: 5px 0; }
+        
+        /* Clickable Phone/Email */
+        .clickable { display: inline-flex; align-items: center; gap: 8px; color: #1a5f2a; text-decoration: none; font-weight: 600; padding: 8px 15px; background: #f0f8f0; border-radius: 5px; margin: 5px 0; transition: all 0.3s; }
+        .clickable:hover { background: #1a5f2a; color: white; }
+        .clickable.whatsapp { background: #25D366; color: white; }
+        .clickable.whatsapp:hover { background: #128C7E; }
+        .clickable.phone { background: #e3f2fd; color: #1976d2; }
+        .clickable.phone:hover { background: #1976d2; color: white; }
+        .clickable.email { background: #fff3e0; color: #f57c00; }
+        .clickable.email:hover { background: #f57c00; color: white; }
+        
+        /* Quick Contact Buttons */
+        .quick-buttons { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+        .quick-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 25px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .quick-btn.whatsapp { background: #25D366; }
+        .quick-btn.whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
+        .quick-btn.phone { background: #1976d2; }
+        .quick-btn.phone:hover { background: #1565c0; transform: translateY(-2px); }
+        .quick-btn.email { background: #f57c00; }
+        .quick-btn.email:hover { background: #ef6c00; transform: translateY(-2px); }
+        .quick-btn.linkedin { background: #0077b5; }
+        .quick-btn.linkedin:hover { background: #005885; transform: translateY(-2px); }
+        
+        /* Contact Form */
+        .form-card { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .form-card h3 { color: #1a5f2a; margin-bottom: 10px; font-size: 1.5rem; }
+        .form-card > p { color: #666; margin-bottom: 30px; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #333; font-weight: 600; font-size: 0.95rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-family: inherit; font-size: 1rem; transition: all 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #1a5f2a; }
+        
+        .btn-submit { background: #1a5f2a; color: white; padding: 15px 40px; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s; }
+        .btn-submit:hover { background: #0d3d16; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        
+        /* Map Section */
+        .map-section { margin-top: 60px; text-align: center; }
+        .map-placeholder { background: white; padding: 80px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); color: #666; }
+        .map-placeholder i { font-size: 4rem; color: #1a5f2a; margin-bottom: 20px; }
+        
+        /* Footer */
+        footer { background-color: #2c3e50; color: white; padding: 50px 0 20px; margin-top: 60px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 40px; }
+        .footer-col h3, .footer-col h4 { color: #FFA500; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: #bdc3c7; text-decoration: none; }
+        .footer-col a:hover { color: #FFA500; }
+        .footer-bottom { border-top: 1px solid #34495e; padding-top: 20px; text-align: center; color: #95a5a6; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .quick-buttons { flex-direction: column; }
+            .quick-btn { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
+
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
             <div class="contact-info">
-                <span><i class="fas fa-phone"></i> +234 80377777991</span>
-                <span><i class="fas fa-envelope"></i> info@holaidexpress.com</span>
+                <span>📞 <a href="tel:+2348031234567">+234 803 123 4567</a></span>
+                <span>✉️ <a href="mailto:info@holaidexpress.com">info@holaidexpress.com</a></span>
             </div>
             <div class="social-links">
-                <a href="https://linkedin.com/company/holaidexpress" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/2349064299762" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://linkedin.com/company/holaidexpress" target="_blank">LinkedIn</a>
+                <a href="https://wa.me/2348031234567" target="_blank">WhatsApp</a>
             </div>
         </div>
     </div>
@@ -36,26 +132,265 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>About Holaidexpress</h1>
-            <p>From Nigerian Farms to European Standards - Quality You Can Trace</p>
+            <h1>Contact Us</h1>
+            <p>Get in touch for quotations, samples, and partnership inquiries</p>
         </div>
     </section>
 
-    <main class="about-page">
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="container">
+            <h2 class="section-title">Our Offices</h2>
             
-            <!--
+            <div class="contact-grid">
+                <!-- Office Information -->
+                <div class="offices-info">
+                    
+                    <!-- Lagos Office -->
+                    <div class="office-card">
+                        <h3>🏢 Lagos Office (Headquarters)</h3>
+                        <div class="office-detail">
+                            <strong>Address</strong>
+                            <p>Suite 12, Holaidexpress Plaza<br>123 Trade Fair Complex<br>Lagos State, Nigeria</p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Coordinator</strong>
+                            <p>Mr. Adebayo Johnson<br>Export Operations Manager</p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Contact</strong>
+                            <p>
+                                <a href="tel:+2348031234567" class="clickable phone">📱 +234 803 123 4567</a><br>
+                                <a href="https://wa.me/2348031234567" class="clickable whatsapp">💬 WhatsApp</a><br>
+                                <a href="mailto:lagos@holaidexpress.com" class="clickable email">✉️ lagos@holaidexpress.com</a>
+                            </p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Working Hours</strong>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM (WAT)</p>
+                        </div>
+                    </div>
+
+                    <!-- Ibadan Office -->
+                    <div class="office-card">
+                        <h3>🏭 Ibadan Office</h3>
+                        <div class="office-detail">
+                            <strong>Address</strong>
+                            <p>Block C, Cocoa Warehouse Complex<br>Moniya Road, Ibadan<br>Oyo State, Nigeria</p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Coordinator</strong>
+                            <p>Mrs. Funke Adeyemi<br>Field Operations Coordinator</p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Contact</strong>
+                            <p>
+                                <a href="tel:+2348059876543" class="clickable phone">📱 +234 805 987 6543</a><br>
+                                <a href="https://wa.me/2348059876543" class="clickable whatsapp">💬 WhatsApp</a><br>
+                                <a href="mailto:ibadan@holaidexpress.com" class="clickable email">✉️ ibadan@holaidexpress.com</a>
+                            </p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Working Hours</strong>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM (WAT)</p>
+                        </div>
+                    </div>
+
+                    <!-- France Office -->
+                    <div class="office-card europe">
+                        <h3>🌍 France Office (Europe)</h3>
+                        <div class="office-detail">
+                            <strong>Address</strong>
+                            <p>45 Avenue des Champs-Élysées<br>75008 Paris<br>France</p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Director</strong>
+                            <p>Mr. Jean-Pierre Dubois<br>European Operations Director</p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Contact</strong>
+                            <p>
+                                <a href="tel:+33123456789" class="clickable phone">📱 +33 1 23 45 67 89</a><br>
+                                <a href="mailto:europe@holaidexpress.com" class="clickable email">✉️ europe@holaidexpress.com</a><br>
+                                <a href="https://linkedin.com/company/holaidexpress" class="clickable" style="background: #0077b5; color: white;">💼 LinkedIn</a>
+                            </p>
+                        </div>
+                        <div class="office-detail">
+                            <strong>Working Hours</strong>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM (CET)</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact Buttons -->
+                    <div class="quick-buttons">
+                        <a href="https://wa.me/2348031234567" class="quick-btn whatsapp" target="_blank">
+                            💬 Quick WhatsApp
+                        </a>
+                        <a href="tel:+2348031234567" class="quick-btn phone">
+                            📞 Call Now
+                        </a>
+                        <a href="mailto:info@holaidexpress.com" class="quick-btn email">
+                            ✉️ Send Email
+                        </a>
+                        <a href="https://linkedin.com/company/holaidexpress" class="quick-btn linkedin" target="_blank">
+                            💼 LinkedIn
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Contact Form -->
+                <div class="form-card">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form action="https://formsubmit.co/info@holaidexpress.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Inquiry - Holaidexpress Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://[your-username].github.io/holaidexpress-website/thank-you.html">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+234...">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="France">France</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product">Product of Interest *</label>
+                            <select id="product" name="product" required>
+                                <option value="">Select Product</option>
+                                <option value="Hibiscus">Hibiscus</option>
+                                <option value="Sesame Seeds">Sesame Seeds</option>
+                                <option value="Cashew Nuts">Cashew Nuts</option>
+                                <option value="Shea Butter">Shea Butter</option>
+                                <option value="Cocoa">Cocoa</option>
+                                <option value="Ginger">Ginger</option>
+                                <option value="Stevia">Stevia</option>
+                                <option value="Soya Beans">Soya Beans</option>
+                                <option value="Sunflower Seeds">Sunflower Seeds</option>
+                                <option value="Cowpea">Cowpea/Black Eye Beans</option>
+                                <option value="Cassia Tora">Cassia Tora</option>
+                                <option value="Cassava Chips">Cassava Chips</option>
+                                <option value="Bitter Kola">Bitter Kola</option>
+                                <option value="Multiple Products">Multiple Products</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volume">Estimated Volume</label>
+                            <select id="volume" name="volume">
+                                <option value="">Select Volume</option>
+                                <option value="1-5 MT">1-5 MT</option>
+                                <option value="5-20 MT">5-20 MT</option>
+                                <option value="20-100 MT">20-100 MT</option>
+                                <option value="100+ MT">100+ MT</option>
+                                <option value="Full Container">Full Container Load (FCL)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Requirements *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please describe your requirements, specifications, preferred delivery terms (FOB/CIF), and any questions..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">📨 Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-section">
+                <div class="map-placeholder">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🗺️</div>
+                    <h3>Our Locations</h3>
+                    <p>Lagos, Nigeria | Ibadan, Nigeria | Paris, France</p>
+                    <p style="margin-top: 20px; color: #999;">Interactive map coming soon</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Holaidexpress Global Biz Nig. Ltd</h3>
+                    <p>From Nigerian Farms to European Standards - Quality You Can Trace</p>
+                    <p>Your trusted partner for Nigerian agricultural exports.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📱 <a href="tel:+2348031234567" style="color: #FFA500;">+234 803 123 4567</a><br>
+                    ✉️ <a href="mailto:info@holaidexpress.com" style="color: #FFA500;">info@holaidexpress.com</a><br>
+                    💬 <a href="https://wa.me/2348031234567" style="color: #FFA500;">WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Holaidexpress Global Biz Nig. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
