@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Holaidexpress Global Biz Nig. Ltd</title>
+    <meta name="description" content="Thank you for contacting Holaidexpress Global Biz Nig. Ltd. We'll get back to you within 24 hours.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .thank-you-container { text-align: center; background: white; padding: 60px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); max-width: 600px; margin: 20px; }
+        .success-icon { width: 100px; height: 100px; background: #1a5f2a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 30px; }
+        h1 { color: #1a5f2a; margin-bottom: 20px; font-size: 2.5rem; }
+        p { color: #666; margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6; }
+        .highlight { color: #1a5f2a; font-weight: 600; }
+        .contact-info { background: #f0f8f0; padding: 25px; border-radius: 10px; margin: 30px 0; }
+        .contact-info p { margin: 10px 0; }
+        .btn-home { display: inline-block; background: #1a5f2a; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: all 0.3s; }
+        .btn-home:hover { background: #0d3d16; transform: translateY(-2px); }
+        .quick-contact { margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+        .quick-contact a { display: inline-flex; align-items: center; gap: 8px; margin: 0 10px; color: #1a5f2a; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-icon">✓</div>
+        <h1>Thank You!</h1>
+        <p>Your message has been sent successfully.</p>
+        <p>We have received your inquiry and will get back to you within <span class="highlight">24 hours</span>.</p>
+        
+        <div class="contact-info">
+            <p style="color: #1a5f2a; font-weight: 600; margin-bottom: 15px;">Need immediate assistance?</p>
+            <p>📱 <a href="tel:+2348077777991" style="color: #1a5f2a; text-decoration: none; font-weight: 600;">+234 80377777991</a></p>
+            <p>💬 <a href="https://wa.me/2349064299762" style="color: #25D366; text-decoration: none; font-weight: 600;">WhatsApp Us</a></p>
+            <p>✉️ <a href="mailto:info@holaidexpress.com" style="color: #1a5f2a; text-decoration: none;">info@holaidexpress.com</a></p>
+        </div>
+        
+        <a href="index.html" class="btn-home">← Back to Homepage</a>
+        
+        <div class="quick-contact">
+            <a href="products.html">View Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
