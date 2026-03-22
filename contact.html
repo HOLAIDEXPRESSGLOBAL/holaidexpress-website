@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -83,8 +83,7 @@
         
         /* Map Section */
         .map-section { margin-top: 60px; text-align: center; }
-        .map-placeholder { background: white; padding: 80px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); color: #666; }
-        .map-placeholder i { font-size: 4rem; color: #1a5f2a; margin-bottom: 20px; }
+        .map-placeholder { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); color: #666; }
         
         /* Footer */
         footer { background-color: #2c3e50; color: white; padding: 50px 0 20px; margin-top: 60px; }
@@ -346,13 +345,20 @@
                 </div>
             </div>
 
-            <!-- Map -->
+            <!-- Map with Logo -->
             <div class="map-section">
-                <div class="map-placeholder">
-                    <div style="font-size: 4rem; margin-bottom: 20px;">🗺️</div>
-                    <h3>Our Locations</h3>
-                    <p>Lagos, Nigeria | Ibadan, Nigeria | Roubaix, France</p>
-                    <p style="margin-top: 20px; color: #999;">Interactive map coming soon</p>
+                <div class="map-placeholder" style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 40px;">
+                    <!-- Logo and Map Icon Side by Side -->
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                        <img src="logo.png" alt="Premium Harvests" style="width: 140px; height: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+                        <div style="font-size: 4rem;">🗺️</div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <h3>Our Locations</h3>
+                        <p style="font-size: 1.1rem; margin-top: 10px;">Lagos, Nigeria | Ibadan, Nigeria | Roubaix, France</p>
+                        <p style="margin-top: 15px; color: #999; font-style: italic;">Interactive map coming soon</p>
+                    </div>
                 </div>
             </div>
 
