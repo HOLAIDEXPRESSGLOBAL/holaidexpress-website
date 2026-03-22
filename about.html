@@ -37,14 +37,31 @@
         /* Story Section */
         .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px; }
         .story-content h2 { color: #1a5f2a; font-size: 2rem; margin-bottom: 20px; }
-        .story-content p { color: #666; margin-bottom: 20px; line-height: 1.8; font-size: 1.05rem; }
+        .story-content p { color: #444; margin-bottom: 20px; line-height: 1.8; font-size: 1.05rem; }
         .story-image img { width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
         
-        /* Mission/Vision Cards */
+        /* FIXED: Mission/Vision Cards - White text on dark green */
         .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; }
-        .mv-card { background: linear-gradient(135deg, #1a5f2a 0%, #2d8a3e 100%); color: white; padding: 40px; border-radius: 10px; }
-        .mv-card h3 { font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
-        .mv-card p { line-height: 1.8; opacity: 0.95; }
+        .mv-card { 
+            background: linear-gradient(135deg, #1a5f2a 0%, #0d3d16 100%); 
+            color: white; 
+            padding: 40px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .mv-card h3 { 
+            font-size: 1.5rem; 
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            color: #FFA500; /* Orange heading for contrast */
+        }
+        .mv-card p { 
+            line-height: 1.8; 
+            color: white; /* White text for readability */
+            font-size: 1.05rem;
+        }
         
         /* Values */
         .values-section { background: #f8f9fa; padding: 60px 0; }
@@ -53,7 +70,7 @@
         .value-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
         .value-icon { width: 70px; height: 70px; background: #1a5f2a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px; }
         .value-card h3 { color: #1a5f2a; margin-bottom: 15px; }
-        .value-card p { color: #666; }
+        .value-card p { color: #555; }
         
         /* Team Section */
         .team-section { padding: 60px 0; }
@@ -61,8 +78,8 @@
         .team-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; padding: 40px 30px; }
         .team-photo { width: 150px; height: 150px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 25px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #1a5f2a; }
         .team-card h3 { color: #1a5f2a; font-size: 1.4rem; margin-bottom: 5px; }
-        .team-role { color: #FFA500; font-weight: 600; margin-bottom: 15px; }
-        .team-card p { color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .team-role { color: #e65100; font-weight: 600; margin-bottom: 15px; }
+        .team-card p { color: #555; margin-bottom: 20px; line-height: 1.6; }
         .linkedin-btn { display: inline-flex; align-items: center; gap: 8px; color: #0077b5; text-decoration: none; font-weight: 600; }
         
         /* Stats */
@@ -104,7 +121,7 @@
         <div class="container">
             <div class="contact-info">
                 <span>📞 <a href="tel:+23480377777991">+234 80377777991</a></span>
-                <span>✉️ <a href="mailto:info@holaidexpress.com">info@holaidexpress.com</a></span>
+                <span>✉️ <a href="mailto::holaidexpressglobalbusiness@hotmail.com">:holaidexpressglobalbusiness@hotmail.com</a></span>
             </div>
             <div class="social-links">
                 <a href="https://linkedin.com/company/holaidexpress" target="_blank">LinkedIn</a>
@@ -135,7 +152,7 @@
     <section class="page-header">
         <div class="container">
             <h1>About Holaidexpress</h1>
-            <p>Bridging Nigerian Agriculture with European Markets Since 2009</p>
+            <p>Bridging Nigerian Agriculture with European Markets</p>
         </div>
     </section>
 
@@ -151,18 +168,20 @@
                     
                     <p>Our name reflects our philosophy: "Holaid" represents our holistic approach to sustainable trade, while "Express" signifies our commitment to efficient, reliable delivery. We believe that agricultural export should benefit everyone in the value chain - from the farmer in the field to the consumer in Europe.</p>
                     
+                    <!-- FIXED MISSION & VISION - White text on dark green -->
                     <div class="mv-grid">
                         <div class="mv-card">
                             <h3>🎯 Our Mission</h3>
-                            <p>To deliver premium Nigerian agricultural products to European markets while ensuring fair value for farmers, exceptional quality for buyers, and sustainable practices for the environment.</p>
+                            <p>To deliver certified Nigerian agricultural products to European markets with complete traceability, fair farmer compensation, and uncompromising quality standards—backed by phytosanitary compliance and SGS verification.</p>
                         </div>
                         <div class="mv-card">
                             <h3>👁️ Our Vision</h3>
-                            <p>To become the most trusted Nigerian agro export partner in Europe, recognized for quality, reliability, and ethical business practices that empower local communities.</p>
+                            <p>To be the preferred Nigerian agro export partner for European buyers, known for reliability, transparency, and sustainable trade practices that empower local farming communities.</p>
                         </div>
                     </div>
                 </div>
                 <div class="story-image">
+                    <!-- PHOTO 1: Replace with your Nigerian farm/facility photo -->
                     <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600" alt="Nigerian Agriculture">
                     <p style="margin-top: 20px; color: #666; font-style: italic; text-align: center;">Direct from Nigerian farms to European standards</p>
                 </div>
@@ -245,22 +264,22 @@
                     <p><strong>Ibadan:</strong> Our field office in the heart of Nigeria's cocoa and cashew belt. This location allows us to work directly with farmers and cooperatives, ensuring quality control at the source.</p>
                     
                     <h3 style="margin-top: 30px;">Europe Operations</h3>
-                    <p><strong>France:</strong> Our European office serves as the primary contact point for European buyers. Located in Roubaix, it provides local support, market intelligence, and seamless communication across time zones.</p>
+                    <p><strong>France:</strong> Our European office serves as the primary contact point for European buyers. Located in Paris, it provides local support, market intelligence, and seamless communication across time zones.</p>
                     
                     <p style="margin-top: 20px;"><a href="contact.html" style="color: #1a5f2a; font-weight: 600;">View Contact Details →</a></p>
                 </div>
                 <div>
                     <div class="value-card" style="margin-bottom: 20px;">
                         <h3 style="color: #1a5f2a; margin-bottom: 15px;">🏢 Lagos Office</h3>
-                        <p>Export Operations & Documentation<br>📱 <a href="tel:+2348077777991">+234 80377777991</a></p>
+                        <p>Export Operations & Documentation<br>📱 <a href="tel:+23480377777991">+234 80377777991</a></p>
                     </div>
                     <div class="value-card" style="margin-bottom: 20px;">
                         <h3 style="color: #1a5f2a; margin-bottom: 15px;">🏭 Ibadan Office</h3>
-                        <p>Field Operations & Farmer Relations<br>📱 <a href="tel:+2348126454206">+2348126454206</a></p>
+                        <p>Field Operations & Farmer Relations<br>📱 <a href="tel:+2347039839339">+2347039839339</a></p>
                     </div>
                     <div class="value-card" style="border: 2px solid #FFA500;">
                         <h3 style="color: #1a5f2a; margin-bottom: 15px;">🌍 France Office</h3>
-                        <p>European Sales & Support<br>📱 <a href="tel:+33954392291">+33954392251</a></p>
+                        <p>European Sales & Support<br>📱 <a href="tel:+33954392251">+33954392251</a></p>
                     </div>
                 </div>
             </div>
@@ -273,22 +292,25 @@
             <h2 class="section-title">Leadership Team</h2>
             <div class="team-grid">
                 <div class="team-card">
+                    <!-- PHOTO 2: Replace with managing director photo -->
                     <div class="team-photo">👤</div>
-                    <h3>Dr.Abdulai</h3>
+                    <h3>DR.R.A.ABDULAI</h3>
                     <div class="team-role">Managing Director</div>
                     <p>Over 28 years experience in agricultural exports and international trade. Leads company strategy and European partnerships.</p>
                     <a href="https://linkedin.com/in/[profile]" class="linkedin-btn" target="_blank">💼 LinkedIn Profile</a>
                 </div>
                 <div class="team-card">
+                    <!-- PHOTO 3: Replace with operations manager photo -->
                     <div class="team-photo">👤</div>
-                    <h3>Tosh Mesh</h3>
-                    <div class="team-role">Director of Export oprations  (Lagos)</div>
+                    <h3>Ted Mash</h3>
+                    <div class="team-role">Director of Export Operations (Lagos)</div>
                     <p>Expert in export documentation, logistics, and quality control. Ensures smooth operations from farm to port.</p>
                     <a href="https://linkedin.com/in/[profile]" class="linkedin-btn" target="_blank">💼 LinkedIn Profile</a>
                 </div>
                 <div class="team-card">
+                    <!-- PHOTO 4: Replace with European director photo -->
                     <div class="team-photo">👤</div>
-                    <h3>O.HOW</h3>
+                    <h3>Hakeem HOW</h3>
                     <div class="team-role">European Director (France)</div>
                     <p>Based in Paris, manages European buyer relationships and market development. Fluent in English and French.</p>
                     <a href="https://linkedin.com/in/hakeem-owolabi-9249203a6" class="linkedin-btn" target="_blank">💼 LinkedIn Profile</a>
@@ -329,8 +351,8 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <p>📱 <a href="tel:+23480377777991" style="color: #FFA500;">+234 80377777991</a><br>
-                    ✉️ <a href="mailto:info@holaidexpress.com" style="color: #FFA500;">info@holaidexpress.com</a><br>
-                    💬 <a href="https://wa.me/2349064299762" style="color: #FFA500;">WhatsApp</a></p>
+                    ✉️ <a href="mailto:holaidexpressglobalbusiness@hotmail.com" style="color: #FFA500;">:holaidexpressglobalbusiness@hotmail.com</a><br>
+                    💬 <a href="https://wa.me/234904299762" style="color: #FFA500;">WhatsApp</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
